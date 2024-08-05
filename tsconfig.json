@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "strict": true,
     "target": "ESNext",
     "module": "ESNext",
@@ -11,5 +12,8 @@
     "types": ["vite/client"],
     "noEmit": true,
     "isolatedModules": true,
-  },
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  }
 }
