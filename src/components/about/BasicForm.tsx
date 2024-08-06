@@ -1,5 +1,6 @@
 import { Component } from "solid-js";
 import { createSignal, createEffect } from "solid-js";
+import { Switch, Input } from "@suid/material";
 import client from "@/utils/client";
 
 interface Family {
@@ -46,26 +47,27 @@ const BasicForm = () => {
 
   return (
     <div>
-      <input
+      <Input
         value={form()?.name}
         placeholder={"이름"}
         onChange={(e: any) => formChangeHandler("name", e.target.value)}
       />
-      <input
+      <Input
         value={form()?.address}
         placeholder={"주소"}
         onChange={(e: any) => formChangeHandler("address", e.target.value)}
       />
-      <input
+      <Input
         value={form()?.age}
         placeholder={"나이"}
         onChange={(e: any) => formChangeHandler("age", e.target.value)}
       />
-      {/* <Switch
+      <Switch
         value={form()?.isMarried}
-        placeholder={"기혼여부"}
-        onChange={(value: boolean) => formChangeHandler("isMarried", value)}
-      /> */}
+        onChange={(e: any, value: boolean) =>
+          formChangeHandler("isMarried", value)
+        }
+      />
       <button
         onClick={() => {
           client.get("bim-mng/menu-list").then((res) => {
