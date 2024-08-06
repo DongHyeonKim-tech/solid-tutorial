@@ -3,7 +3,6 @@ import { render } from "solid-js/web";
 
 import "./index.css";
 import App from "./App";
-import "antd/dist/reset.css";
 
 const root = document.getElementById("root");
 

@@ -2,6 +2,8 @@ import { Component } from "solid-js";
 import { A } from "@solidjs/router";
 import { createSignal, createEffect } from "solid-js";
 import BasicForm from "@/components/about/BasicForm";
+import { MenuStateType } from "@/utils/state";
+import { useMenuStore } from "@/utils/store";
 
 interface Family {
   key: number;
@@ -24,6 +26,14 @@ const About: Component = () => {
     name: "",
     age: 0,
     isMarried: false,
+  });
+
+  const { arrMenu } = useMenuStore((state: MenuStateType) => ({
+    arrMenu: state.data,
+  }));
+
+  createEffect(() => {
+    console.log("arrMenu about: ", arrMenu);
   });
 
   const formChangeHandler = (

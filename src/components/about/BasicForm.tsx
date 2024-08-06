@@ -26,8 +26,6 @@ const BasicForm = () => {
     isMarried: false,
   });
 
-  const [menu, setMenu] = createSignal();
-
   const formChangeHandler = (
     name: string,
     value: string | number | boolean
@@ -39,10 +37,6 @@ const BasicForm = () => {
 
   createEffect(() => {
     console.log("form: ", form());
-  });
-
-  createEffect(() => {
-    console.log("menu: ", menu());
   });
 
   return (
@@ -68,16 +62,6 @@ const BasicForm = () => {
           formChangeHandler("isMarried", value)
         }
       />
-      <button
-        onClick={() => {
-          client.get("bim-mng/menu-list").then((res) => {
-            console.log("res: ", res);
-            setMenu(res.data);
-          });
-        }}
-      >
-        호출
-      </button>
     </div>
   );
 };
