@@ -36,15 +36,6 @@ const About: Component = () => {
     console.log("arrMenu about: ", arrMenu);
   });
 
-  const formChangeHandler = (
-    name: string,
-    value: string | number | boolean
-  ) => {
-    setForm((prev: Form) => {
-      return { ...prev, [name]: value };
-    });
-  };
-
   createEffect(() => {
     console.log("form: ", form());
   });

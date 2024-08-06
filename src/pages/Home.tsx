@@ -39,6 +39,7 @@ const Home: Component = () => {
         })}
         <nav>
           <A href={"/about"}>About</A>
+          <A href={"/create-resource-test"}>Test</A>
         </nav>
       </header>
     </div>
