@@ -20,6 +20,8 @@
     "@suid/material": "^0.16.0",
     "@types/node": "^22.1.0",
     "axios": "^1.7.3",
-    "solid-js": "^1.8.11"
+    "solid-js": "^1.8.11",
+    "solid-zustand": "^1.8.1",
+    "zustand": "^4.5.4"
   }
 }
